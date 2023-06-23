@@ -9,6 +9,7 @@ import '../ReusableComponents/MiddleSection.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import YouTube from 'react-youtube';
 import VideoPlayer from './VideoPlayer';
+import Toggle from './Toggle';
 
 const assets = [
 	{
@@ -93,10 +94,17 @@ const MiddleSection = () => {
 	return (
 		<>
 			<Grid container>
+				{/* <Grid item lg={2} mx='auto'>
+					<Toggle />
+				</Grid> */}
 				<Grid item lg={10} mx='auto'>
 					<Box
 						mt={2}
-						style={{ display: 'flex', justifyContent: 'space-between' }}>
+						style={{
+							display: 'flex',
+							justifyContent: 'space-between',
+							cursor: 'pointer',
+						}}>
 						<Box
 							style={{
 								color: '#0029FF',
@@ -123,7 +131,12 @@ const MiddleSection = () => {
 						</Box>
 					</Box>
 					<Box mt={3} style={{ background: '#E9ECEF', padding: '25px' }}>
-						<Box style={{ fontWeight: 'bold', fontSize: '20px' }}>
+						<Box
+							style={{
+								fontWeight: 'bold',
+								fontSize: '20px',
+								cursor: 'pointer',
+							}}>
 							Explore the world of management
 						</Box>
 						<Box className='poppins' mt={2}>
@@ -168,7 +181,7 @@ const MiddleSection = () => {
 													className='openSans'
 													style={{
 														width: '30px',
-														borderRadius: '15pxx',
+														borderRadius: '15px',
 														background: 'white',
 														color: 'black',
 														textAlign: 'center',
@@ -195,7 +208,7 @@ const MiddleSection = () => {
 														&nbsp;{item.asset_description}
 													</span>
 												</Box>
-												<Box>
+												<Box style={{ paddingBottom: '105px' }}>
 													<VideoPlayer videoLink={item.asset_content} />
 												</Box>
 											</Box>
@@ -217,14 +230,18 @@ const MiddleSection = () => {
 													</span>
 												</Box>
 												<Box style={{ background: '#FEFFC0', display: 'flex' }}>
-													<Box mt={1}>
+													<Box ml={1} mt={1} style={{ padding: '10px' }}>
 														<i
 															style={{ fontWeight: 'bold', fontSize: '20px' }}
 															class='fa-solid fa-angle-up'></i>
 													</Box>
 													<Box
-														ml={5}
-														style={{ fontWeight: 'bold', fontSize: '25px' }}>
+														ml={4}
+														style={{
+															fontWeight: '620',
+															fontSize: '25px',
+															padding: '10px',
+														}}>
 														Thread A
 													</Box>
 												</Box>
@@ -233,6 +250,7 @@ const MiddleSection = () => {
 														<Grid item lg={5} mx='auto'>
 															<Box mt={2} ml={1}>
 																<Box
+																	className='poppins'
 																	style={{
 																		background: '#F5F5F5',
 																		padding: '10px 92px 8px 15px',
@@ -309,9 +327,9 @@ const MiddleSection = () => {
 																	ml={2}
 																	mt={2}
 																	style={{
-																		padding: '10px',
+																		padding: '5px',
 																		background: '#0029FF',
-																		width: '100px',
+																		width: '120px',
 																		display: 'flex',
 																		borderRadius: '15px',
 																	}}>
@@ -324,8 +342,12 @@ const MiddleSection = () => {
 																		}}>
 																		+
 																	</Box>
-																	<Box style={{ color: 'white' }}>
-																		&nbsp;Sub thread
+																	<Box
+																		style={{
+																			color: 'white',
+																			fontSize: '15px',
+																		}}>
+																		&nbsp;Sub-thread
 																	</Box>
 																</Box>
 															</Box>
@@ -333,6 +355,7 @@ const MiddleSection = () => {
 														<Grid item lg={5} mx='auto'>
 															<Box mt={2} ml={1}>
 																<Box
+																	className='poppins'
 																	style={{
 																		background: '#F5F5F5',
 																		padding: '10px 62px 8px 15px',
@@ -370,7 +393,7 @@ const MiddleSection = () => {
 																style={{
 																	display: 'flex',
 																}}>
-																<Box
+																{/* <Box
 																	ml={2}
 																	mt={1}
 																	style={{
@@ -388,6 +411,44 @@ const MiddleSection = () => {
 																			style={{ marginLeft: '2px' }}
 																			class='fa-solid fa-angle-down'></i>
 																	</Box>
+																</Box> */}
+																<Box
+																	ml={1}
+																	mt={1}
+																	style={{
+																		fontWeight: '600',
+																		fontSize: '13px',
+																		display: 'flex',
+																		padding: '5px',
+																		// paddingTop: '10px',
+																		// paddingBottoms: '10px',
+																		boxShadow:
+																			'0px 2px 4px rgba(0, 0, 0, 0.25)',
+																		borderRadius: '10px',
+																	}}>
+																	<Box>
+																		{/* <label for='cars'>Choose a car:</label> */}
+																		<select
+																			style={{
+																				border: 'none',
+																				outline: 'none',
+																				fontWeight: '550',
+																			}}
+																			name='cars'
+																			id='cars'>
+																			<option value='volvo'>
+																				Select categ
+																			</option>
+																			<option value='saab'>Saab</option>
+																			<option value='opel'>Opel</option>
+																			<option value='audi'>Audi</option>
+																		</select>{' '}
+																	</Box>
+																	{/* <Box>
+																		<i
+																			style={{ marginLeft: '2px' }}
+																			class='fa-solid fa-angle-down'></i>
+																	</Box> */}
 																</Box>
 																<Box
 																	ml={1}
@@ -396,23 +457,42 @@ const MiddleSection = () => {
 																		fontWeight: '600',
 																		fontSize: '13px',
 																		display: 'flex',
-																		padding: '10px',
+																		padding: '5px',
+																		// paddingTop: '10px',
 																		boxShadow:
 																			'0px 2px 4px rgba(0, 0, 0, 0.25)',
 																		borderRadius: '10px',
 																	}}>
-																	<Box>Select proces </Box>
 																	<Box>
+																		{/* <label for='cars'>Choose a car:</label> */}
+																		<select
+																			style={{
+																				border: 'none',
+																				outline: 'none',
+																				fontWeight: '600',
+																			}}
+																			name='cars'
+																			id='cars'>
+																			<option value='volvo'>
+																				Select procs
+																			</option>
+																			<option value='saab'>Saab</option>
+																			<option value='opel'>Opel</option>
+																			<option value='audi'>Audi</option>
+																		</select>{' '}
+																	</Box>
+																	{/* <Box>
 																		<i
 																			style={{ marginLeft: '2px' }}
 																			class='fa-solid fa-angle-down'></i>
-																	</Box>
+																	</Box> */}
 																</Box>
 															</Box>
 														</Grid>
 														<Grid item lg={11} mx='auto'>
 															<Box mt={2} ml={1}>
 																<Box
+																	className='poppins'
 																	style={{
 																		background: '#F5F5F5',
 																		padding: '10px 92px 8px 15px',
@@ -453,13 +533,16 @@ const MiddleSection = () => {
 											<Box>
 												<Box style={{ padding: '20px' }}>
 													<span
+														className='poppins'
 														style={{
 															fontWeight: '600',
-															fontSize: '19px',
+															fontSize: '17px',
 														}}>
 														Descripton:
 													</span>
-													<span style={{ fontSize: '17px' }}>
+													<span
+														className='openSans'
+														style={{ fontSize: '17px' }}>
 														&nbsp;{item.asset_description}
 													</span>
 												</Box>
@@ -479,12 +562,17 @@ const MiddleSection = () => {
 																	}}
 																	class='fa-solid fa-angle-up'></i>
 															</Box>
-															<Box ml={1} style={{ fontWeight: '600' }}>
+															<Box
+																className='openSans'
+																ml={1}
+																style={{ fontWeight: '600' }}>
 																Introduction
 															</Box>
 														</Box>
 														<Box>
-															<Box style={{ padding: '20px' }}>
+															<Box
+																className='openSans'
+																style={{ padding: '20px' }}>
 																The 4SA Method , How to bring a idea into
 																progress ?
 															</Box>
@@ -494,6 +582,7 @@ const MiddleSection = () => {
 																	justifyContent: 'flex-end',
 																}}>
 																<Box
+																	className='openSans'
 																	style={{
 																		fontWeight: 'bold',
 																		color: '#606161',
@@ -518,11 +607,14 @@ const MiddleSection = () => {
 																	}}
 																	class='fa-solid fa-angle-up'></i>
 															</Box>
-															<Box ml={1} style={{ fontWeight: '600' }}>
+															<Box
+																className='openSans'
+																ml={1}
+																style={{ fontWeight: 'bold' }}>
 																Thread A
 															</Box>
 														</Box>
-														<Box ml={3} mt={2}>
+														<Box className='openSans' ml={3} mt={2}>
 															How are you going to develop your stratergy ?
 															Which method are you going to use to develop a
 															stratergy ? What if the project is lengthy?
@@ -534,6 +626,7 @@ const MiddleSection = () => {
 																justifyContent: 'flex-end',
 															}}>
 															<Box
+																className='openSans'
 																style={{
 																	fontWeight: 'bold',
 																	color: '#606161',
@@ -543,6 +636,7 @@ const MiddleSection = () => {
 														</Box>
 														<Box ml={5} mt={3} style={{}}>
 															<Box
+																classNam='openSans'
 																ml={1}
 																style={{
 																	fontWeight: 'bold',
@@ -553,7 +647,10 @@ const MiddleSection = () => {
 																Example 1
 															</Box>
 														</Box>
-														<Box mt={1} style={{ marginLeft: '58px' }}>
+														<Box
+															classNam='openSans'
+															mt={1}
+															style={{ marginLeft: '58px' }}>
 															You have a concept , How will you put into
 															progress?
 														</Box>
@@ -579,15 +676,22 @@ const MiddleSection = () => {
 														height: '2px',
 														background: '#D9D7D7',
 													}}></Box>
-												<Box style={{ padding: '25px' }}>
+												<Box style={{ padding: '20px' }}>
 													<Box style={{ fontWeight: 'bold' }}>Title</Box>
 													<Box
 														mt={2}
 														style={{
 															boxShadow: '1px 3px 8px rgba(0, 0, 0, 0.25)',
-															padding: '22px',
+															padding: '8px',
 															borderRadius: '5px',
-														}}></Box>
+														}}>
+														<input
+															style={{
+																border: 'none',
+																outline: 'none',
+																width: '100%',
+															}}></input>
+													</Box>
 													<Box mt={3} style={{ fontWeight: 'bold' }}>
 														Content
 													</Box>
@@ -598,13 +702,20 @@ const MiddleSection = () => {
 															borderRadius: '5px 5px 0px 0px',
 															boxShadow: '1px 3px 8px rgba(0, 0, 0, 0.25)',
 														}}>
-														<Box style={{ display: 'flex' }}>
-															<Box ml={1} style={{ color: '#616161' }}>
+														<Box style={{ display: 'flex', cursor: 'pointer' }}>
+															<Box
+																ml={1}
+																style={{ color: '#616161', cursor: 'pointer' }}>
 																File
 															</Box>
 															{file.map((item, i) => {
 																return (
-																	<Box ml={2} style={{ color: '#616161' }}>
+																	<Box
+																		ml={2}
+																		style={{
+																			color: '#616161',
+																			cursor: 'pointer',
+																		}}>
 																		{item.name}
 																	</Box>
 																);
@@ -615,6 +726,7 @@ const MiddleSection = () => {
 															mt={2}
 															style={{
 																display: 'flex',
+																cursor: 'pointer',
 															}}>
 															<Box>
 																<img src={left} alt='' />
@@ -644,7 +756,7 @@ const MiddleSection = () => {
 													</Box>
 													<Box
 														style={{
-															marginRight: '4px',
+															marginRight: '0px',
 															boxShadow: '1px 3px 8px rgba(0, 0, 0, 0.25)',
 														}}>
 														<textarea
